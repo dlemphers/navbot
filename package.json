@@ -10,8 +10,7 @@
     "watch": "tsc -w",
     "build": "npm run clean && npm run tsc",
     "nodemon": "nodemon",
-    "dev": "npm run nodemon",
-    "dev-n": "nodemon --watch 'src/**/*.ts' --ignore 'src/**/*.spec.ts' --exec npm run tsc"
+    "dev": "npm run nodemon"
   },
   "repository": {
     "type": "git",
@@ -43,6 +42,7 @@
     "@types/mocha": "^2.2.44",
     "@types/node": "^8.0.50",
     "botbuilder": "^3.11.0",
+    "dotenv": "^4.0.0",
     "express": "^4.16.2",
     "nodemon": "^1.12.1",
     "ts-node": "^3.3.0"

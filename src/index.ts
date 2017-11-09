@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import botServer from './server/server';
 
 const port = process.env.PORT || 3978

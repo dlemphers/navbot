@@ -17,7 +17,7 @@ class BotServer {
 
     router.get('/', (_, res) => {
       res.json({
-        message: 'Hello Yo!'
+        message: 'Welcome to NavBot'
       })
     })
 
