@@ -7,7 +7,7 @@
       "declaration": true,
       "strictNullChecks": true,
       "removeComments": true,
-      "noUnusedLocals": true,
+      "noUnusedLocals": false,
       "noUnusedParameters": true,
       "moduleResolution": "node",
       "sourceMap": true,

@@ -4,7 +4,14 @@ import {
     UniversalBot
 } from 'botbuilder';
 
-import { add_luis_triggers } from './luis';
+import { 
+    initLuis,
+    extractCustomerEntity 
+} from './luis';
+
+import {
+    findCustomer
+} from './navision';
 
 const settings: IChatConnectorSettings = {
     appId: process.env.MICROSOFT_APP_ID,
@@ -14,7 +21,17 @@ const settings: IChatConnectorSettings = {
 var connector = new ChatConnector(settings);
 var bot = new UniversalBot(connector);
 
-bot = add_luis_triggers(bot);
+initLuis(bot);
+
+bot.dialog("GetCustomerAddress", [
+    // Waterfal dialog
+    extractCustomerEntity,
+    findCustomer
+])
+.triggerAction({
+    matches: 'GetCustomerAddress'
+})
+
 
 bot.dialog("/", function(session) {
     session.send("Sorry, I don't understand your request")
