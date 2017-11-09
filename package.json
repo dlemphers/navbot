@@ -1,0 +1,30 @@
+{
+  "name": "dynamics-nav-bot",
+  "version": "1.0.0",
+  "description": "Botbuilder based bot for integrating Microsoft Cognitive Services with Microsoft Dynamics Nav",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dlemphers/navbot.git"
+  },
+  "keywords": [
+    "Bot",
+    "Microsoft",
+    "Cognitive",
+    "Services",
+    "Microsoft",
+    "Azure",
+    "Microsoft",
+    "Dynamics",
+    "NAV"
+  ],
+  "author": "David Lemphers",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dlemphers/navbot/issues"
+  },
+  "homepage": "https://github.com/dlemphers/navbot#readme"
+}
