@@ -6,7 +6,7 @@ import {
 function extractCustomerEntity(session, args, next) {
     console.log("Builder found " + JSON.stringify(args));
 
-    var customerName = EntityRecognizer.findEntity(args.intent.entities, 'customer');
+    var customerName = EntityRecognizer.findEntity(args.intent.entities, 'CustomerName');
 
     if(customerName) {
         session.send("I see you're looking for an address for " + customerName.entity + "...");

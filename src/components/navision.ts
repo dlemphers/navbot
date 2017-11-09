@@ -3,6 +3,8 @@ import {
     BasicAuthSecurity
 } from 'soap';
 
+import { parseString } from 'xml2js';
+
 const navAuth = "Basic " + new Buffer(
     process.env.NAV_USERNAME + ':' + process.env.NAV_PASSWORD
 ).toString("base64");
@@ -23,6 +25,13 @@ function makeSoapCall(session, customerName) {
                 if(error) {
                     session.send(error)
                 } else {
+                    // XML is returned from NAV, convert to JSON
+                    parseString(result.return_value, function(err, xml2jsonResult) {
+                        if(!err) {
+                            session.send(xml2jsonResult.CustomerAddress.Address[0]);
+                            console.log(xml2jsonResult);
+                        }
+                    })
                     session.send(result.return_value)
                 }
             });
@@ -32,7 +41,7 @@ function makeSoapCall(session, customerName) {
 }
 
 var findCustomer = function(session, data) {
-    console.log(data.customerName);
+    console.log(data);
     makeSoapCall(session, data.customerName);
 }
 
